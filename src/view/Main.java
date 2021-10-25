@@ -33,7 +33,7 @@ public class Main {
         personManager.setPersonList(personList);
         phoneListManager.setPhoneLists(phoneLists);
 
-        Pattern pattern  = Pattern.compile("^[0-9]{1,15}$") ;
+        Pattern pattern  = Pattern.compile("^[0-9]{10}$") ;
 
 
 
