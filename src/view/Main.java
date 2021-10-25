@@ -33,19 +33,21 @@ public class Main {
         phoneListManager.setPhoneLists(phoneLists);
 
 
-        System.out.println("Chương trình quản lý danh bạ:");
-        System.out.println("chọn chức năng theo số (để tiếp tục):");
-        System.out.println("1. Xem danh sách");
-        System.out.println("2. Thêm mới");
-        System.out.println("3. Cập nhật");
-        System.out.println("4. Xoá");
-        System.out.println("5. Tìm kiếm");
-        System.out.println("6. Đọc từ file");
-        System.out.println("7. Ghi vào file");
-        System.out.println("8. Thoát");
-        Scanner inputChoice = new Scanner(System.in);
-        int choice = inputChoice.nextInt();
+
+
         while (true) {
+            System.out.println("Chương trình quản lý danh bạ:");
+            System.out.println("chọn chức năng theo số (để tiếp tục):");
+            System.out.println("1. Xem danh sách");
+            System.out.println("2. Thêm mới");
+            System.out.println("3. Cập nhật");
+            System.out.println("4. Xoá");
+            System.out.println("5. Tìm kiếm");
+            System.out.println("6. Đọc từ file");
+            System.out.println("7. Ghi vào file");
+            System.out.println("8. Thoát");
+            Scanner inputChoice = new Scanner(System.in);
+            int choice = inputChoice.nextInt();
             switch (choice) {
                 case 1:
                     phoneListManager.showAllList();
@@ -84,7 +86,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("Enter the Phone number:");
+                    System.err.println("Enter the Phone number:");
                     Scanner inputPhone = new Scanner(System.in);
                     String phone = inputPhone.nextLine();
                     int index = phoneListManager.searchIndexByPhone(phone);
@@ -107,17 +109,16 @@ public class Main {
                         String idPhone1 = inputIdPhone1.nextLine();
                         switch (group1) {
                             case "FAMILY":
-                                phoneList= FactoryPhoneList.getPhoneList(TypeGroupPhoneList.FAMILY, person1, phoneNumber1, email1, idPhone1);
-                                phoneListManager.updateByIndex(index, phoneList);
-
+                                phoneList1= FactoryPhoneList.getPhoneList(TypeGroupPhoneList.FAMILY, person1, phoneNumber1, email1, idPhone1);
+                                phoneListManager.updateByIndex(index, phoneList1);
                                 break;
                             case "WORK":
-                                phoneList= FactoryPhoneList.getPhoneList(TypeGroupPhoneList.WORK, person1, phoneNumber1, email1, idPhone1);
-                                phoneListManager.updateByIndex(index, phoneList);
+                                phoneList1= FactoryPhoneList.getPhoneList(TypeGroupPhoneList.WORK, person1, phoneNumber1, email1, idPhone1);
+                                phoneListManager.updateByIndex(index, phoneList1);
                                 break;
                             case "FRIEND":
-                                phoneList= FactoryPhoneList.getPhoneList(TypeGroupPhoneList.FRIEND, person1, phoneNumber1, email1, idPhone1);
-                                phoneListManager.updateByIndex(index, phoneList);
+                                phoneList1= FactoryPhoneList.getPhoneList(TypeGroupPhoneList.FRIEND, person1, phoneNumber1, email1, idPhone1);
+                                phoneListManager.updateByIndex(index, phoneList1);
                                 break;
                             default:
                                 System.err.println("NO TYPE PHONE LIKE THAT");
