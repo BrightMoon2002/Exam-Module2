@@ -11,6 +11,7 @@ import storage.PhoneListFIleManager;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,6 +32,8 @@ public class Main {
         List<PhoneList> phoneLists = phoneListFileManager.readList();
         personManager.setPersonList(personList);
         phoneListManager.setPhoneLists(phoneLists);
+
+        Pattern pattern  = Pattern.compile("^[0-9]{1,15}$") ;
 
 
 
@@ -58,9 +61,13 @@ public class Main {
                     Scanner inputGroup = new Scanner(System.in);
                     String group = inputGroup.nextLine();
                     PhoneList phoneList = new PhoneList();
-                    System.out.println("Enter the phone number:");
-                    Scanner inputPhoneNumber = new Scanner(System.in);
-                    String phoneNumber = inputPhoneNumber.nextLine();
+                    String phoneNumber;
+                    String body;
+                    do {
+                        System.out.println("Enter the phone number:");
+                        Scanner inputPhoneNumber = new Scanner(System.in);
+                        phoneNumber = inputPhoneNumber.nextLine();
+                    } while(!pattern.matcher(phoneNumber).matches());
                     System.out.println("Enter the email");
                     Scanner inputEmail = new Scanner(System.in);
                     String email = inputEmail.nextLine();
@@ -86,7 +93,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.err.println("Enter the Phone number:");
+                    System.out.println("Enter the Phone number:");
                     Scanner inputPhone = new Scanner(System.in);
                     String phone = inputPhone.nextLine();
                     int index = phoneListManager.searchIndexByPhone(phone);
@@ -157,6 +164,7 @@ public class Main {
     }
 
     private static String inputPhoneNumber() {
+
         System.out.println("Enter the Phone number:");
         Scanner inputPhone2 = new Scanner(System.in);
         return inputPhone2.nextLine();
