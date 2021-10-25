@@ -62,7 +62,6 @@ public class Main {
                     String group = inputGroup.nextLine();
                     PhoneList phoneList = new PhoneList();
                     String phoneNumber;
-                    String body;
                     do {
                         System.out.println("Enter the phone number:");
                         Scanner inputPhoneNumber = new Scanner(System.in);

@@ -1,6 +1,8 @@
 package model;
 
-public class WorkList extends PhoneList{
+import java.io.Serializable;
+
+public class WorkList extends PhoneList implements Serializable {
     private String type;
 
     public String getType() {

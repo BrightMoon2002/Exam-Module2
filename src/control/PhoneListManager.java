@@ -35,16 +35,19 @@ public class PhoneListManager implements IGeneralManager<PhoneList> {
     @Override
     public void saveList(PhoneList phoneList) {
 phoneLists.add(phoneList);
+phoneListFIleManager.writeList(phoneLists);
     }
 
     @Override
     public void removeByIndex(int index) {
 phoneLists.remove(index);
+phoneListFIleManager.writeList(phoneLists);
     }
 
     @Override
     public void updateByIndex(int index, PhoneList phoneList) {
 phoneLists.set(index, phoneList);
+phoneListFIleManager.writeList(phoneLists);
     }
 
     @Override

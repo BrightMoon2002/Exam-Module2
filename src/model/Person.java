@@ -1,6 +1,8 @@
 package model;
 
-public class Person extends BasePerson {
+import java.io.Serializable;
+
+public class Person extends BasePerson implements Serializable {
     private String fullName;
     private String doB;
     private String address;

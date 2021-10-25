@@ -1,6 +1,8 @@
 package model;
 
-public class PhoneList extends BasePhoneList{
+import java.io.Serializable;
+
+public class PhoneList extends BasePhoneList implements Serializable {
     private Person person;
     private String phoneNumber;
     private String email;

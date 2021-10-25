@@ -36,16 +36,19 @@ public class PersonManager implements IGeneralManager<Person> {
     @Override
     public void saveList(Person person) {
         personList.add(person);
+        personFileManager.writeList(personList);
     }
 
     @Override
     public void removeByIndex(int index) {
         personList.remove(index);
+        personFileManager.writeList(personList);
     }
 
     @Override
     public void updateByIndex(int index, Person person) {
         personList.set(index, person);
+        personFileManager.writeList(personList);
     }
 
     @Override
