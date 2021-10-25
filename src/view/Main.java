@@ -34,6 +34,7 @@ public class Main {
         phoneListManager.setPhoneLists(phoneLists);
 
         Pattern pattern  = Pattern.compile("^[0-9]{10}$") ;
+        Pattern pattern2  = Pattern.compile("^[0-9]{10}[@][a-z]{1,9}[.][c][o][m]$") ;
 
 
 
@@ -67,9 +68,12 @@ public class Main {
                         Scanner inputPhoneNumber = new Scanner(System.in);
                         phoneNumber = inputPhoneNumber.nextLine();
                     } while(!pattern.matcher(phoneNumber).matches());
-                    System.out.println("Enter the email");
-                    Scanner inputEmail = new Scanner(System.in);
-                    String email = inputEmail.nextLine();
+                    String email;
+                    do {
+                        System.out.println("Enter the email");
+                        Scanner inputEmail1 = new Scanner(System.in);
+                        email = inputEmail1.nextLine();
+                    } while(!pattern2.matcher(email).matches());
                     System.out.println("Enter the id");
                     Scanner inputIdPhone = new Scanner(System.in);
                     String idPhone = inputIdPhone.nextLine();
@@ -107,9 +111,13 @@ public class Main {
                         System.out.println("Etner the phone number:");
                         Scanner inputPhoneNumber1 = new Scanner(System.in);
                         String phoneNumber1 = inputPhoneNumber1.nextLine();
-                        System.out.println("Enter the email");
-                        Scanner inputEmail1 = new Scanner(System.in);
-                        String email1 = inputEmail1.nextLine();
+                        String email1;
+                        do {
+                            System.out.println("Enter the email");
+                            Scanner inputEmail1 = new Scanner(System.in);
+                            email1 = inputEmail1.nextLine();
+                        } while(!pattern2.matcher(email1).matches());
+
                         System.out.println("Etnerr the id");
                         Scanner inputIdPhone1 = new Scanner(System.in);
                         String idPhone1 = inputIdPhone1.nextLine();
